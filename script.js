@@ -21,12 +21,18 @@ document.querySelector('.check').addEventListener('click', function () {
   } else {
     message.textContent = `You won!`;
     highScore = score;
+    document.querySelector('.number').textContent = randomNum;
     document.querySelector('.highscore').textContent = highScore;
+    document.querySelector('body').style = 'background-color:green';
   }
 });
 
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
-  document.querySelector('.score').textContent = score;
+  document.querySelector('body').style = 'background-color:#222';
+  randomNum = Math.floor(Math.random() * 20);
+  document.querySelector('.score').textContent = 20;
+  document.querySelector('.number').textContent = "?";
   message.textContent = 'Start guessing...';
+  console.log(randomNum);
 });
